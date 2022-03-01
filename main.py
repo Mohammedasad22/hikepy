@@ -119,7 +119,7 @@ def follow_ig() :
             print("[+]aLreadY foLloweD skipping...")
 
         else:
-            driver.find_element(BY.XPATH, xpath).click()
+            driver.find_element(By.XPATH, xpath).click()
 
 follow_ig()
 
