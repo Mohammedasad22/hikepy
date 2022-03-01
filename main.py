@@ -4,6 +4,8 @@ import time , random
 from time import sleep
 from appium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.touch_action import TouchAction
 
 #color
@@ -95,13 +97,33 @@ def follow_ig() :
 
     try:
         
-        read_username = driver.find_element(By.ID, 'com.instagram.android:id/profile_header_full_name').text
-        xpath = """//android.widget.Button[@content-desc="Follow """ + read_username + """"]"""
+        read_username_id = "com.instagram.android:id/profile_header_full_name"
 
-        check_follow_status = driver.find_element(By.XPATH, xpath).text
+        read_username = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.ID, read_username_id))
+    ).text
+
+        xpath = """//android.widget.Button[@content-desc="Follow """ + read_username + """"]"""
+        
+        message_xpath = """//android.widget.Button[@text="Message"]"""
+
+        check_follow_status = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.XPATH, xpath))
+    )
+
+        try:
+            check_private_status = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.XPATH, message_xpath))
+    ).text
+
+        except Exception as err:
+            check_private_status = "Private account"    
 
         if check_follow_status == "Following":
             print("[+]aLreadY foLloweD skipping...")
+
+        elif check_private_status == "Private account":
+            pass
 
         else:
             driver.find_element(By.XPATH, xpath).click()
@@ -110,8 +132,14 @@ def follow_ig() :
         
         print()
         print("[+]xpath not found , trying 2nd method")
-        read_username1 = driver.find_element(By.ID, 'com.instagram.android:id/action_bar_title').text
-        xpath = """//android.widget.Button[@content-desc="Follow """ + read_username1 + """"]"""
+
+        read_fullname_id = 'com.instagram.android:id/action_bar_title'
+        
+        read_fullname = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.ID, read_fullname_id))
+    ).text
+
+        xpath = """//android.widget.Button[@content-desc="Follow """ + read_fullname + """"]"""
         
         check_follow_status = driver.find_element(By.XPATH, xpath).text
 
