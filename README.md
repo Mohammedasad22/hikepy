@@ -15,18 +15,18 @@
 2. Download and install appium for your os
 3. Start the server
 
-# Clone and change directory
+## Clone and change directory
 
 ```
 git clone https://github.com/eternalodball/hikepy
 cd hikepy
 ```
 
-# Install requirements
+## Install requirements
 ```
 pip3 install -r requirements.txt
 ```
-# Run it !
+## Run it !
 
 ```
 python3 main.py
