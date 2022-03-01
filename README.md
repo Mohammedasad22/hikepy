@@ -2,10 +2,12 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
+
 # Prerquests
 
-1. Android sdk
-2. java
+* Android sdk
+* java
+* adb
 
 # Setup
 
