@@ -5,9 +5,10 @@
 # Setup
 
 1. Go to https://appium.io/
-2. Download appium server for your os and start the server
+2. Download and install appium for your os
+3. Start the server
 
-## Install requirements
+# Install requirements
 ```
 pip3 install -r requirements.txt
 ```
