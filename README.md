@@ -26,4 +26,4 @@ python3 main.py
 ```
 # Note -
 >### Your phone must be connected to your pc with adb
-[View tutorial](https://www.youtube.com/watch?v=VJAVse3qk0I)
+[view tutorial](https://youtu.be/7NsfjRDn0Bc)
