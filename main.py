@@ -132,7 +132,7 @@ def return_to_app() :
     time.sleep(secs)
     user_action.tap(x=798, y=1332).perform()
     try :
-        print()
+        pass
     except Exception as err:
         time.sleep(3)
         logo_ppl_button.click()
