@@ -53,7 +53,7 @@ except Exception as err:
 
 #seconds (time to wait)
 
-secs = random.uniform(4.1, 5.3)
+secs = random.uniform(1.5, 2)
 
 #Elements & Action
 print()
@@ -132,10 +132,10 @@ def return_to_app() :
     time.sleep(secs)
     user_action.tap(x=798, y=1332).perform()
     try :
-        time.sleep(1)
-        logo_ppl_button.click()
-    except Exception as err:
         print()
+    except Exception as err:
+        time.sleep(3)
+        logo_ppl_button.click()
 
 return_to_app()
 
