@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import time
+import time , random
 from time import sleep
 from appium import webdriver
 from selenium.webdriver.common.by import By
@@ -51,11 +51,14 @@ except Exception as err:
         exit()
     
 
+#seconds (time to wait)
+
+secs = random.uniform(2, 3)
 
 #Elements & Action
 print()
 print("[+]oPeNiNg app ...")
-time.sleep(3)
+time.sleep(secs)
 logo_ppl_button = driver.find_element(By.ID, 'com.hiketop.app:id/left_1_image_button')
 logo_ppl_button.click()
 
@@ -63,7 +66,7 @@ print()
 print("[+]PeRfOrMiNg, Task")
 print()
 
-time.sleep(2)
+time.sleep(secs)
 
 user_action = TouchAction(driver)
 
@@ -86,7 +89,7 @@ ppl_task1()
 
 #Instagram follow button create xpath function
 
-time.sleep(2)
+time.sleep(secs)
 
 def follow_ig() :
 
@@ -112,13 +115,13 @@ def follow_ig() :
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 #Return to hiketop app after completing the task
 
 def return_to_app() :
     driver.press_keycode(82)
-    time.sleep(2)
+    time.sleep(secs)
     user_action.tap(x=798, y=1332).perform()
     try :
         time.sleep(1)
@@ -130,7 +133,7 @@ return_to_app()
 
 #Task 2
 
-time.sleep(2)
+time.sleep(secs)
 
 def ppl_task2() :
     
@@ -141,17 +144,17 @@ def ppl_task2() :
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 3
 
-time.sleep(2)
+time.sleep(secs)
 
 def ppl_task3() :
     x2 = 825
@@ -161,11 +164,11 @@ def ppl_task3() :
 
 ppl_task3()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
@@ -174,7 +177,7 @@ return_to_app()
 def scroll_hiketop() :
     user_action.press(x=530, y=1745).move_to(x=530, y=205).release().perform()
 
-time.sleep(2)
+time.sleep(secs)
 
 scroll_hiketop()
 
@@ -188,11 +191,11 @@ def ppl_task4() :
 
 ppl_task4()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
@@ -201,399 +204,399 @@ return_to_app()
 
 #Task 5
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task1()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 6
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 7
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task3()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Scroll
 
-time.sleep(2)
+time.sleep(secs)
 scroll_hiketop()
 
 #Task 8
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task4()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 9
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task1()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 10
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 11
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task3()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Scroll
 
-time.sleep(2)
+time.sleep(secs)
 scroll_hiketop()
 
 #Task 12
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task4()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 13
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task1()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 14
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 15
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task3()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Scroll
 
-time.sleep(2)
+time.sleep(secs)
 scroll_hiketop()
 
 #Task 16
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task4()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 17
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task1()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 18
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 19
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task3()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Scroll
 
-time.sleep(2)
+time.sleep(secs)
 scroll_hiketop()
 
 #Task 20
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task4()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 21
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task1()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 22
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 
 #Task 23
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task3()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 
 #Scroll
 
-time.sleep(2)
+time.sleep(secs)
 scroll_hiketop()
 
 
 #Task 24
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task4()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 25
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task1()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 26
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 27
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task3()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Scroll
 
-time.sleep(2)
+time.sleep(secs)
 scroll_hiketop()
 
 #Task 28
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task4()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 29
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task1()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
 #Task 30
 
-time.sleep(2)
+time.sleep(secs)
 
 ppl_task2()
 
-time.sleep(2)
+time.sleep(secs)
 
 follow_ig()
 
-time.sleep(2)
+time.sleep(secs)
 
 return_to_app()
 
-print("[+]uff!, that was some hardword ;)")
+print("[+]phew!, that was some hardword ;)")
