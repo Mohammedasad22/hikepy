@@ -19,9 +19,9 @@ desired_capabilities = {
 
     "platformName":"android" ,
 
-    "appPackage":"com.hiketop.app" ,
+#    "appPackage":"com.hiketop.app" ,
 
-    "appActivity":"com.hiketop.app.activities.splash.SplashActivity" ,
+#    "appActivity":"com.hiketop.app.activities.splash.SplashActivity" ,
 
     "noReset":"true"
 
@@ -98,9 +98,13 @@ def follow_ig() :
         read_username = driver.find_element(By.ID, 'com.instagram.android:id/profile_header_full_name').text
         xpath = """//android.widget.Button[@content-desc="Follow """ + read_username + """"]"""
 
-        driver.find_element(By.XPATH, xpath).click()
+        check_follow_status = driver.find_element(By.XPATH, xpath).text
 
-        print("[+]xPaTh found !")
+        if check_follow_status == "Following":
+            print("[+]aLreadY foLloweD skipping...")
+
+        else:
+            driver.find_element(By.XPATH, xpath).click()
 
     except Exception as err:
         
@@ -108,10 +112,14 @@ def follow_ig() :
         print("[+]xpath not found , trying 2nd method")
         read_username1 = driver.find_element(By.ID, 'com.instagram.android:id/action_bar_title').text
         xpath = """//android.widget.Button[@content-desc="Follow """ + read_username1 + """"]"""
+        
+        check_follow_status = driver.find_element(By.XPATH, xpath).text
 
-        driver.find_element(By.XPATH, xpath).click()
-        print()
-        print("[+]xPath found !")
+        if check_follow_status == "Following":
+            print("[+]aLreadY foLloweD skipping...")
+
+        else:
+            driver.find_element(BY.XPATH, xpath).click()
 
 follow_ig()
 
