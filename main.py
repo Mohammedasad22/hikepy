@@ -53,7 +53,7 @@ except Exception as err:
 
 #seconds (time to wait)
 
-secs = random.uniform(2, 3)
+secs = random.uniform(4.1, 5.3)
 
 #Elements & Action
 print()
