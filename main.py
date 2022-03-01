@@ -19,9 +19,9 @@ desired_capabilities = {
 
     "platformName":"android" ,
 
-#    "appPackage":"com.hiketop.app" ,
+    "appPackage":"com.hiketop.app" ,
 
-#    "appActivity":"com.hiketop.app.activities.splash.SplashActivity" ,
+    "appActivity":"com.hiketop.app.activities.splash.SplashActivity" ,
 
     "noReset":"true"
 
