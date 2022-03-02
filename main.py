@@ -136,7 +136,6 @@ def follow_ig() :
 
         except Exception as err:
             
-            print()
 
             read_fullname_id = 'com.instagram.android:id/action_bar_title'
             
