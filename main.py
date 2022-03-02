@@ -140,11 +140,25 @@ def follow_ig() :
     ).text
 
         xpath = """//android.widget.Button[@content-desc="Follow """ + read_fullname + """"]"""
+
+        message_xpath = """//android.widget.Button[@text="Message"]"""
         
         check_follow_status = driver.find_element(By.XPATH, xpath).text
 
+        try:
+            check_private_status = WebDriverWait(driver, 5).until(
+        EC.presence_of_element_located((By.XPATH, message_xpath))
+    ).text
+
+        except Exception as err:
+            check_private_status = "Private account"
+
+
         if check_follow_status == "Following":
             print("[+]aLreadY foLloweD skipping...")
+
+        elif check_private_status == "Private account":
+            pass            
 
         else:
             driver.find_element(By.XPATH, xpath).click()
