@@ -95,73 +95,85 @@ time.sleep(secs)
 
 def follow_ig() :
 
+    global no_such_element
+
     try:
-        
-        read_username_id = "com.instagram.android:id/profile_header_full_name"
 
-        read_username = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.ID, read_username_id))
-    ).text
-
-        xpath = """//android.widget.Button[@content-desc="Follow """ + read_username + """"]"""
-        
-        message_xpath = """//android.widget.Button[@text="Message"]"""
-
-        check_follow_status = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.XPATH, xpath))
-    )
+        no_such_element = "False"
 
         try:
-            check_private_status = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.XPATH, message_xpath))
-    ).text
+            
+            read_username_id = "com.instagram.android:id/profile_header_full_name"
+
+            read_username = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.ID, read_username_id))
+        ).text
+
+            xpath = """//android.widget.Button[@content-desc="Follow """ + read_username + """"]"""
+            
+            message_xpath = """//android.widget.Button[@text="Message"]"""
+
+            check_follow_status = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, xpath))
+        )
+
+            try:
+                check_private_status = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, message_xpath))
+        ).text
+
+            except Exception as err:
+                check_private_status = "Private account"    
+
+            if check_follow_status == "Following":
+                print("[+]aLreadY foLloweD skipping...")
+
+            elif check_private_status == "Private account":
+                pass
+
+            else:
+                driver.find_element(By.XPATH, xpath).click()
 
         except Exception as err:
-            check_private_status = "Private account"    
+            
+            print()
 
-        if check_follow_status == "Following":
-            print("[+]aLreadY foLloweD skipping...")
+            read_fullname_id = 'com.instagram.android:id/action_bar_title'
+            
+            read_fullname = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.ID, read_fullname_id))
+        ).text
 
-        elif check_private_status == "Private account":
-            pass
+            xpath = """//android.widget.Button[@content-desc="Follow """ + read_fullname + """"]"""
 
-        else:
-            driver.find_element(By.XPATH, xpath).click()
+            message_xpath = """//android.widget.Button[@text="Message"]"""
+            
+            check_follow_status = driver.find_element(By.XPATH, xpath).text
 
+            try:
+                check_private_status = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, message_xpath))
+        ).text
+
+            except Exception as err:
+                check_private_status = "Private account"
+
+
+            if check_follow_status == "Following":
+                print("[+]aLreadY foLloweD skipping...")
+
+            elif check_private_status == "Private account":
+                pass            
+
+            else:
+                driver.find_element(By.XPATH, xpath).click()
+    
     except Exception as err:
+
+        no_such_element = "true"
+
+        pass
         
-        print()
-        print("[+]xpath not found , trying 2nd method")
-
-        read_fullname_id = 'com.instagram.android:id/action_bar_title'
-        
-        read_fullname = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.ID, read_fullname_id))
-    ).text
-
-        xpath = """//android.widget.Button[@content-desc="Follow """ + read_fullname + """"]"""
-
-        message_xpath = """//android.widget.Button[@text="Message"]"""
-        
-        check_follow_status = driver.find_element(By.XPATH, xpath).text
-
-        try:
-            check_private_status = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.XPATH, message_xpath))
-    ).text
-
-        except Exception as err:
-            check_private_status = "Private account"
-
-
-        if check_follow_status == "Following":
-            print("[+]aLreadY foLloweD skipping...")
-
-        elif check_private_status == "Private account":
-            pass            
-
-        else:
-            driver.find_element(By.XPATH, xpath).click()
 
 follow_ig()
 
@@ -170,14 +182,19 @@ time.sleep(secs)
 #Return to hiketop app after completing the task
 
 def return_to_app() :
-    driver.press_keycode(82)
-    time.sleep(secs)
-    user_action.tap(x=798, y=1332).perform()
-    try :
+
+    if no_such_element == "true":
         pass
-    except Exception as err:
-        time.sleep(3)
-        logo_ppl_button.click()
+
+    else:
+        driver.press_keycode(82)
+        time.sleep(secs)
+        user_action.tap(x=798, y=1332).perform()
+        try :
+            pass
+        except Exception as err:
+            time.sleep(3)
+            logo_ppl_button.click()
 
 return_to_app()
 
