@@ -37,8 +37,8 @@ try:
 
 except Exception as err:
     
-    print(color.RED + "[+]Error while connecting to device")
     print()
+    print(color.RED + "[+]Error while connecting to device")
     option = input("[+]Do you want to print error log? (y/n) ")
 
     if option == "y":
