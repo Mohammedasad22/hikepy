@@ -37,7 +37,7 @@ python3 main.py
 
 ## make compatible for your device
 ```
-Search for x1 , x2 , x3 and x4 (same goes for y1 - y4)
+Search for x1 , x2 , x3 & x4 (same goes for y1 - y4) and change co-ordinates value
 ```
 ## If still doesn't work
 ```
