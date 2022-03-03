@@ -35,7 +35,6 @@ python3 main.py
 >### Your phone must be connected to your pc with adb
 [view tutorial](https://youtu.be/7NsfjRDn0Bc)
 
-# make script for your device
-```
-search for x1 , x2 , x3 and x4 (same for y1 - y4) and change their values and you are ready to go
-```
+# make compatible for your device
+
+### search for x1 , x2 , x3 and x4 (same for y1 - y4) and change their values and you are ready to go
