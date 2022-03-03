@@ -1,5 +1,5 @@
 # hikepy
-## Works on poco x3 idk about your device deponds on resolution
+## <del> Works on poco x3 idk about your device deponds on resolution </del> </br>
 [![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://forthebadge.com)
 
 
