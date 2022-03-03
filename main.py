@@ -654,8 +654,6 @@ time.sleep(secs)
 
 return_to_app()
 
-print("[+]phew!, that was some hardword ;)")
-
 # Additional tasks [ better to do some extra work :) ]
 
 # Task 31
