@@ -111,7 +111,7 @@ def follow_ig() :
 
             xpath = """//android.widget.Button[@content-desc="Follow """ + read_username + """"]"""
             
-            message_xpath = """//android.widget.Button[@text="Message"]"""
+            message_xpath = '//android.widget.Button[@text="Message"]'
 
             check_follow_status = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.XPATH, xpath))
