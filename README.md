@@ -31,10 +31,6 @@ pip3 install -r requirements.txt
 ```
 python3 main.py
 ```
-# Note -
->### Your phone must be connected to your pc with adb
-[view tutorial](https://youtu.be/7NsfjRDn0Bc)
-
 ## make compatible for your device
 ```
 Search for x1 , x2 , x3 & x4 (same goes for y1 - y4) and change value
@@ -43,3 +39,6 @@ Search for x1 , x2 , x3 & x4 (same goes for y1 - y4) and change value
 ```
 see line 232 and change x , y value
 ```
+# Note -
+>### Your phone must be connected to your pc with adb
+[view demo](https://youtu.be/7NsfjRDn0Bc)
