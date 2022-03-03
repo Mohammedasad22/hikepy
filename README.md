@@ -35,7 +35,7 @@ python3 main.py
 ```
 Search for x1 , x2 , x3 & x4 (same goes for y1 - y4) and change value
 ```
-## If still doesn't work
+## change swipe/scroll value
 ```
 see line 232 and change x , y value
 ```
