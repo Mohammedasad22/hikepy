@@ -99,7 +99,7 @@ def follow_ig() :
 
     try:
 
-        no_such_element = "False"
+        no_such_element = "false"
 
         try:
             
@@ -113,10 +113,6 @@ def follow_ig() :
             
             message_xpath = '//android.widget.Button[@text="Message"]'
 
-            check_follow_status = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, xpath))
-        ).text
-
             try:
                 check_private_status = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.XPATH, message_xpath))
@@ -125,10 +121,7 @@ def follow_ig() :
             except Exception as err:
                 check_private_status = "Private account"    
 
-            if check_follow_status == "Following":
-                print("[+]aLreadY foLloweD skipping...")
-
-            elif check_private_status == "Private account":
+            if check_private_status == "Private account":
                 pass
 
             else:
@@ -136,6 +129,7 @@ def follow_ig() :
 
         except Exception as err:
             
+            no_such_element = "false"            
 
             read_fullname_id = 'com.instagram.android:id/action_bar_title'
             
@@ -146,8 +140,6 @@ def follow_ig() :
             xpath = """//android.widget.Button[@content-desc="Follow """ + read_fullname + """"]"""
 
             message_xpath = """//android.widget.Button[@text="Message"]"""
-            
-            check_follow_status = driver.find_element(By.XPATH, xpath).text
 
             try:
                 check_private_status = WebDriverWait(driver, 5).until(
@@ -156,12 +148,9 @@ def follow_ig() :
 
             except Exception as err:
                 check_private_status = "Private account"
+            
 
-
-            if check_follow_status == "Following":
-                print("[+]aLreadY foLloweD skipping...")
-
-            elif check_private_status == "Private account":
+            if check_private_status == "Private account":
                 pass            
 
             else:
