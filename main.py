@@ -115,7 +115,7 @@ def follow_ig() :
 
             check_follow_status = WebDriverWait(driver, 5).until(
             EC.presence_of_element_located((By.XPATH, xpath))
-        )
+        ).text
 
             try:
                 check_private_status = WebDriverWait(driver, 5).until(
