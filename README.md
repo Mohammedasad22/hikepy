@@ -31,7 +31,7 @@ pip3 install -r requirements.txt
 ```
 python3 main.py
 ```
-## make compatible for your device
+## make compatible for your device (edit main.py)
 ```
 Search for x1 , x2 , x3 & x4 (same goes for y1 - y4) and change value
 ```
