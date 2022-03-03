@@ -187,7 +187,7 @@ def return_to_app() :
 
     else:
         driver.press_keycode(82)
-        time.sleep(secs)
+        time.sleep(3)
         user_action.tap(x=798, y=1332).perform()
         try :
             pass
