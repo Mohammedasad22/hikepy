@@ -230,6 +230,7 @@ return_to_app()
 #Scroll
 
 def scroll_hiketop() :
+    time.sleep(2)
     user_action.press(x=530, y=1745).move_to(x=530, y=205).release().perform()
 
 time.sleep(secs)
