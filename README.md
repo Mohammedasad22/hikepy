@@ -35,11 +35,11 @@ python3 main.py
 >### Your phone must be connected to your pc with adb
 [view tutorial](https://youtu.be/7NsfjRDn0Bc)
 
-# make compatible for your device
+## make compatible for your device
 ```
 Search for x1 , x2 , x3 and x4 (same goes for y1 - y4)
 ```
-### If still doesn't work
+## If still doesn't work
 ```
 see line 232 and change x , y value
 ```
