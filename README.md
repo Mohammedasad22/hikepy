@@ -39,6 +39,10 @@ Search for x1 , x2 , x3 & x4 (same goes for y1 - y4) and change value
 ```
 see line 232 and change x , y value
 ```
+## if app doesn't open
+```
+untick line 24 & 26 and start app manually(add #)
+```
 # Note -
 >### Your phone must be connected to your pc with adb
 [view demo](https://youtu.be/7NsfjRDn0Bc)
