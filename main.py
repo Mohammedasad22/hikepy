@@ -655,3 +655,44 @@ time.sleep(secs)
 return_to_app()
 
 print("[+]phew!, that was some hardword ;)")
+
+# Additional tasks [ better to do some extra work :) ]
+
+# Task 31
+
+time.sleep(secs)
+
+ppl_task3()
+
+time.sleep(secs)
+
+follow_ig()
+
+time.sleep(secs)
+
+return_to_app()
+
+#Scroll
+
+time.sleep(secs)
+scroll_hiketop()
+
+# Task 32
+
+time.sleep(secs)
+
+ppl_task4()
+
+time.sleep(secs)
+
+follow_ig()
+
+time.sleep(secs)
+
+return_to_app()
+
+print(color.BOLD)
+print("[+] All tasks completed !!")
+print()
+print("[+] Consider giving a star on the repo ;)")
+print()
