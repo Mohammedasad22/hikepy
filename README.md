@@ -41,7 +41,7 @@ see line 232 and change x , y value
 ```
 ## if app doesn't open
 ```
-untick line 24 & 26 and start app manually(add #)
+untick line 24 & 26 and start app manually (add #)
 ```
 # Note -
 >### Your phone must be connected to your pc with adb
