@@ -212,10 +212,10 @@ return_to_app()
 time.sleep(secs)
 
 def ppl_task3() :
-    x2 = 825
-    y2 = 1677
+    x3 = 825
+    y3 = 1677
 
-    follow_hiketop(x2, y2)
+    follow_hiketop(x3, y3)
 
 ppl_task3()
 
@@ -239,10 +239,10 @@ scroll_hiketop()
 #Task 4
 
 def ppl_task4() :
-    x2=228
-    y2=892
+    x4=228
+    y4=892
 
-    follow_hiketop(x2, y2)
+    follow_hiketop(x4, y4)
 
 ppl_task4()
 
