@@ -122,10 +122,12 @@ def follow_ig() :
                 check_private_status = "Private account"    
 
             if check_private_status == "Private account":
+                print("[+] NOT OK")
                 pass
 
             else:
                 driver.find_element(By.XPATH, xpath).click()
+                print(["[+] OK")
 
         except Exception as err:
             
@@ -151,14 +153,17 @@ def follow_ig() :
             
 
             if check_private_status == "Private account":
+                print("[+] NOT OK")
                 pass            
 
             else:
                 driver.find_element(By.XPATH, xpath).click()
+                print("[+] OK")
     
     except Exception as err:
 
         no_such_element = "true"
+        print("[+] NOT OK")
 
         pass
         
