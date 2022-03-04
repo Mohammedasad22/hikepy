@@ -184,11 +184,6 @@ def return_to_app() :
         driver.press_keycode(82)
         time.sleep(3)
         user_action.tap(x=798, y=1332).perform()
-        try :
-            pass
-        except Exception as err:
-            time.sleep(3)
-            logo_ppl_button.click()
 
 return_to_app()
 
