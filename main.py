@@ -127,7 +127,7 @@ def follow_ig() :
 
             else:
                 driver.find_element(By.XPATH, xpath).click()
-                print(["[+] OK")
+                print("[+] OK")
 
         except Exception as err:
             
