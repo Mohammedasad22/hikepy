@@ -88,6 +88,7 @@ def ppl_task1() :
     follow_hiketop(x1, y1)
 
 ppl_task1()
+print()
 
 #Instagram follow button create xpath function
 
