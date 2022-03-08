@@ -96,75 +96,60 @@ time.sleep(secs)
 
 def follow_ig() :
 
-    global no_such_element
+    global NO_SUCH_ELEMENT
 
     try:
 
-        no_such_element = "false"
+        NO_SUCH_ELEMENT = "False"
+            
+        FOLLOW_XPATH = '//android.widget.Button[@text="Follow"]'
+            
+        MESSAGE_XPATH = '//android.widget.Button[@text="Message"]'
+
+        FOLLOWING_XPATH = '//android.widget.Button[@text="Following"]'
 
         try:
-            
-            read_username_id = "com.instagram.android:id/profile_header_full_name"
 
-            read_username = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.ID, read_username_id))
+            CHECK_PRIVATE_STATUS = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, MESSAGE_XPATH))
         ).text
-
-            xpath = """//android.widget.Button[@content-desc="Follow """ + read_username + """"]"""
-            
-            message_xpath = '//android.widget.Button[@text="Message"]'
-
-            try:
-                check_private_status = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, message_xpath))
-        ).text
-
-            except Exception as err:
-                check_private_status = "Private account"    
-
-            if check_private_status == "Private account":
-                print("[+] NOT OK")
-                pass
-
-            else:
-                driver.find_element(By.XPATH, xpath).click()
-                print("[+] OK")
 
         except Exception as err:
-            
-            no_such_element = "false"            
 
-            read_fullname_id = 'com.instagram.android:id/action_bar_title'
-            
-            read_fullname = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.ID, read_fullname_id))
+            CHECK_PRIVATE_STATUS = "Private account"
+
+        try:
+
+            CHECK_FOLLOWING_STATUS = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, FOLLOWING_XPATH))
         ).text
-
-            xpath = """//android.widget.Button[@content-desc="Follow """ + read_fullname + """"]"""
-
-            message_xpath = """//android.widget.Button[@text="Message"]"""
-
-            try:
-                check_private_status = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, message_xpath))
-        ).text
-
-            except Exception as err:
-                check_private_status = "Private account"
             
+        except Exception as err:
 
-            if check_private_status == "Private account":
-                print("[+] NOT OK")
-                pass            
+            CHECK_FOLLOWING_STATUS = "Not followed"
 
-            else:
-                driver.find_element(By.XPATH, xpath).click()
-                print("[+] OK")
+            
+        if CHECK_FOLLOWING_STATUS == "Following":
+
+            print("[+] NOT OK , FOLLOWED ACC ...")
+            pass
+
+
+        elif CHECK_PRIVATE_STATUS == "Private account":
+
+            print("[+] NOT OK , PRIVATE ACC ...")
+            pass
+
+        else:
+
+            driver.find_element(By.XPATH, FOLLOW_XPATH).click()
+            print("[+] OK")
     
     except Exception as err:
 
-        no_such_element = "true"
-        print("[+] NOT OK")
+        print("[+] NOT OK , UNKNOWN EXCEPTION ...")
+
+        NO_SUCH_ELEMENT = "true"
 
         pass
         
@@ -177,7 +162,7 @@ time.sleep(secs)
 
 def return_to_app() :
 
-    if no_such_element == "true":
+    if NO_SUCH_ELEMENT == "true":
         pass
 
     else:
