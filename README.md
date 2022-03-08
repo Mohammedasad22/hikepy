@@ -45,4 +45,3 @@ untick line 24 & 26 and start app manually (add #)
 ```
 # Note -
 >### Your phone must be connected to your pc with adb
-[view demo](https://youtu.be/7NsfjRDn0Bc)
