@@ -98,6 +98,8 @@ def follow_ig() :
 
     global NO_SUCH_ELEMENT
 
+try:
+
     try:
 
         NO_SUCH_ELEMENT = "False"
@@ -110,9 +112,7 @@ def follow_ig() :
 
         try:
 
-            CHECK_PRIVATE_STATUS = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, MESSAGE_XPATH))
-        ).text
+            CHECK_PRIVATE_STATUS = driver.find_element(By.XPATH, MESSAGE_XPATH).text
 
         except Exception as err:
 
@@ -120,9 +120,7 @@ def follow_ig() :
 
         try:
 
-            CHECK_FOLLOWING_STATUS = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.XPATH, FOLLOWING_XPATH))
-        ).text
+            CHECK_FOLLOWING_STATUS = driver.find_element(By.XPATH, FOLLOWING_XPATH).text
             
         except Exception as err:
 
@@ -147,11 +145,11 @@ def follow_ig() :
     
     except Exception as err:
 
-        print("[+] NOT OK , UNKNOWN EXCEPTION ...")
+        print(mistake not defined) # Doing mistake consciously
 
-        NO_SUCH_ELEMENT = "true"
-
-        pass
+except Exception as err:
+    
+    NO_SUCH_ELEMENT = "true"
         
 
 follow_ig()
