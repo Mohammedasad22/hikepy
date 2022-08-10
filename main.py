@@ -240,7 +240,7 @@ time.sleep(secs)
 return_to_app()
 
 #Now, I can repeat the upper code from ppl_task4 to ppl_task3 (kinda messed up on naming variables) , till i reach 30 ppls 
-# it's like 4,1,2,3 scroll & then repeat 
+# it's like 4,1,2,3 scroll & then repeat ik should have used loop but whatever ...
 
 #Task 5
 
